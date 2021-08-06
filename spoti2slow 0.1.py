@@ -16,7 +16,7 @@ import googleapiclient.errors
 #search up for song name + artist name + slowed and reverb on youtube
 #add video id of first result of each song to a list
 #add ids of the videos to a youtube playlist
-#add option to download playlist using youtube-dl not done yet
+#add option to download playlist using youtube-dl (not done yet)
 
 
 class Slowed_Reverb_Playlist:
@@ -72,7 +72,7 @@ class Slowed_Reverb_Playlist:
         print(self.vidID)
 
     def addToPlaylist(self,playlist):
-        scopes = ["https://www.googleapis.com/auth/youtube"]
+        scopes = ["https://www.googleapis.com/auth/youtube"] #make sure app on google dev console has this scope in oauth
 
         
         # Disable OAuthlib's HTTPS verification when running locally.
@@ -81,7 +81,7 @@ class Slowed_Reverb_Playlist:
 
         api_service_name = "youtube"
         api_version = "v3"
-        client_secrets_file = "client_secret.json"
+        client_secrets_file = "client_secret.json" #make sure client secret json oauth from app from credentials dashboard in google dev console is in same dir as this py file
 
         # Get credentials and create an API client
         flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
@@ -114,8 +114,8 @@ class Slowed_Reverb_Playlist:
         
 
 
-client_id = "31279e0d9b734874a9be846e1e5371d2"
-client_secret = "e3bde864cec147d98b36e4bfe3a72878"
+client_id = "client id" #client id from google dev console
+client_secret = "client secret" #client secret from google dev console
 
 s = Slowed_Reverb_Playlist(client_id, client_secret)
 s.spotiSongList("https://open.spotify.com/playlist/4jdbUv9lhpKFrKnpg8taYV?si=efe5b1d9db7e4970")
