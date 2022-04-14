@@ -1,5 +1,5 @@
 # Slowify
-Get songs from a specified Spotify playlist URL and create a slowed and reverbed version of the songs in a Youtube Playlist.
+Get songs from a specified Spotify playlist URL and create a slowed and reverbed version of the songs that will be added to an already exisiting Youtube playlist.
 
 ## Prequesites
 Install these using pip
